@@ -3,9 +3,9 @@ require('dotenv').config();
 
 
 const MONGODB_CONNECTION_URL=process.env.MONGODB_CONNECTION_URL
-console.log(process.env)
 
-function connectToMongoDB () {
+
+async function connectToMongoDB () {
 mongoose.connect(MONGODB_CONNECTION_URL)
 
 mongoose.connection.on("connected", ()=>{
@@ -19,3 +19,4 @@ mongoose.connection.on("error", (err)=>{
 }
 
 module.exports = {connectToMongoDB}
+
